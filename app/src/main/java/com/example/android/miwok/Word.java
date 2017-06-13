@@ -16,12 +16,19 @@ public class Word {
     private String mMiwokTranslation;
 
     /** Word image **/
-    private Drawable mImage;
+    private int mImageResourceId = NO_IMAGE_PROVIDED;
 
-    public Word(String defaultTranslation, String miwokTranslation, Drawable image){
+    private static final int NO_IMAGE_PROVIDED = -1;
+
+    public Word(String defaultTranslation, String miwokTranslation){
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
-        mImage = image;
+    }
+
+    public Word(String defaultTranslation, String miwokTranslation, int image){
+        mDefaultTranslation = defaultTranslation;
+        mMiwokTranslation = miwokTranslation;
+        mImageResourceId = image;
     }
 
     /**
@@ -40,5 +47,9 @@ public class Word {
         return mMiwokTranslation;
     }
 
-    public Drawable getImage(){ return mImage; }
+    public int getImageResourceId(){ return mImageResourceId; }
+
+    public boolean hasImage(){
+        return mImageResourceId != NO_IMAGE_PROVIDED;
+    }
 }
