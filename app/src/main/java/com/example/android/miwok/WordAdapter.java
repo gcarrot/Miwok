@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -49,10 +50,14 @@ public class WordAdapter extends ArrayAdapter<Word> {
             imgIcon.setVisibility(View.GONE);
         }
 
-        LinearLayout text_container = (LinearLayout)listItemView.findViewById(R.id.text_container);
+        RelativeLayout text_container = (RelativeLayout)listItemView.findViewById(R.id.text_container);
         int color = ContextCompat.getColor(getContext(), mColorResourcesID);
         text_container.setBackgroundColor(color);
 
         return listItemView;
     }
+
+
+
+
 }
